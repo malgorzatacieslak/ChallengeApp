@@ -1,21 +1,25 @@
-﻿// Dzień 4
-var name = "Ewa";
-bool female = true;
-var age = 33;
+﻿// Dzień 5
+int number = 1985202337;
+string numberToString = number.ToString();
+char[] letters = numberToString.ToArray();
+int[] result = new int[10];
 
-if (female && age < 30)
+foreach (var oneLetter in letters)
 {
-    Console.WriteLine("Kobieta poniżej 30 lat");
+    for (int i = 0; i < result.Length; i++)
+
+    {
+        string numberToString2 = i.ToString();
+        char[] tmp = numberToString2.ToArray();
+
+        if (oneLetter == tmp[0])
+        {
+            result[i]++;
+        }
+    }
 }
-else if (name == "Ewa" && age == 33)
+
+for (int i = 0; i < result.Length; i++)
 {
-    Console.WriteLine("Ewa, lat 33");
-}
-else if (!female && age < 18)
-{
-    Console.WriteLine("Niepełnoletni mężczyzna");
-}
-else
-{
-    Console.WriteLine("Ktoś inny");
+    Console.WriteLine(i + " => " + result[i]);
 }
